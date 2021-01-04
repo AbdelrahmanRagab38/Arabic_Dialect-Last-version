@@ -9,7 +9,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import MultinomialNB
-import  pandas as pd
+import pandas as pd
 # Create our Flask Object Instance
 
 app = Flask(__name__)
@@ -53,4 +53,4 @@ def predict():
     return render_template('result.html',prediction = detect)
 
 if __name__ == '__main__':
-	app.run(debug=True)
+	app.run()
