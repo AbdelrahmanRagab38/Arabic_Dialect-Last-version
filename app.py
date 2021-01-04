@@ -23,7 +23,7 @@ def home():
 # Set Predict Page
 # Using TextBlob package (powered by the Google Translate API)
 
-@app.route('/predict',methods=['POST'])
+@app.route('/predict',methods=['GET', 'POST'])
 
 def predict():
     if request.method == 'POST':
