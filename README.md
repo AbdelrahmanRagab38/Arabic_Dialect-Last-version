@@ -11,8 +11,11 @@ NOTE the deployed model was Naive bayes which is the lawest accurecy but we depl
 https://arabic-dialect-identification2.herokuapp.com/
 
 team members information
-
+1-
 سلمى خالد على محمد  20170248
+2-
 عبدالرحمن رجب محمد 20170287
+3-
 هاجر عصمت رجب 20170616
+4-
 عبدالرحمن اشرف محمد مرسى 20170282
