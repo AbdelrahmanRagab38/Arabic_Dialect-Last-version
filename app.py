@@ -2,6 +2,7 @@
 
 from flask import Flask, render_template, url_for, request
 import random as rn
+import re
 #import textblob
 #from textblob import TextBlob
 import joblib
@@ -75,6 +76,7 @@ def home():
     def get_ran():
         return (rn.choice(sentances))
 
+
     return render_template('home.html',sentances =sentances , rn =rn , get_ran = get_ran())
 
     # Set Predict Page
@@ -128,7 +130,10 @@ def predict():
 
         #blobline = TextBlob(message)
         #detect = blobline.detect_language()
-    return render_template('result.html',prediction = detect,prediction2 = detect2,prediction3 = detect3,messages = message2)
+        lennn = len(message2)
+        boob = re.findall('[a-zA-Z]', message2)
+        blen=len(boob)
+    return render_template('result.html',prediction = detect,prediction2 = detect2,prediction3 = detect3,messages = message2 , lenn=lennn , blen=blen)
 
 if __name__ == '__main__':
 	app.run()

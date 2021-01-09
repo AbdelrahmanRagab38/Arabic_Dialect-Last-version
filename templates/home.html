@@ -6,6 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 <style>
 body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
 body {font-size:16px;}
@@ -36,17 +38,16 @@ body {font-size:16px;}
     </div>
 
     <!-- Text Input -->
-
   <div class="sub-container">
     <form action="{{ url_for('predict')}}" method="POST">
     <p>Enter Your Text Below and We'll Detect the dialect - اكتب هنا واحنا هنقولك اللهجة</p>    
 
     <!-- <input type="text" name="comment"/> -->
-    <textarea name="message" rows="4" cols="50"></textarea>
+    <textarea id="messages" name="message" rows="4" cols="50"></textarea>
     <br/>
-    <input type="submit" value="predict">
-        <button onclick="window.location.reload();" type="button" ,>Get ispired by random one!</button>
-        <h5> Example: {{ get_ran }}</h5>
+    <input id="input" type="submit" value="predict">
+        <button id="btn" onclick="window.location.reload()" type="button" ,>Get ispired by random one!</button>
+        <h5 id="ex"> Example: {{ get_ran }} </h5>
 	</form>
 	 
 </body>

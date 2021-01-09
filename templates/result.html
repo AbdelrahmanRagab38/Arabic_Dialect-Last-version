@@ -41,8 +41,9 @@ body {font-size:16px;}
       <h2>Detected Dialect for {{ messages }}:</h2>
 
       </div>
-
-         {% if prediction3 == 'MSA'%}
+         {% if lenn < 2 or blen >2%}
+        <h4 style="color:red;">  من فضلك ادخل جملة صحيحه </h4>
+         {% elif prediction3 == 'MSA'%}
         <h4 style="color:green;">SVM CLassifier prediction is: MSA- انها لغه عربيه فصحي</h4>
         {% elif prediction3 == 'DIAL_GLF'%}
         <h4 style="color:green;">SVM CLassifier prediction is : gulf-خليجي</h4>
@@ -52,7 +53,9 @@ body {font-size:16px;}
         <h4 style="color:green;">SVM CLassifier prediction is : LEV-شاميه</h4>
         {% endif %}
 
-         {% if prediction == 'MSA'%}
+         {% if lenn < 2 or blen >2%}
+        <h4 style="color:green;"></h4>
+         {% elif prediction == 'MSA'%}
         <h4 style="color:green;">NB calssifier prediction is : MSA- انها لغه عربيه فصحي</h4>
         {% elif prediction == 'DIAL_GLF'%}
         <h4 style="color:green;">NB calssifier prediction is :gulf-خليجي</h4>
@@ -63,8 +66,9 @@ body {font-size:16px;}
          {% endif %}
 
 
-
-        {% if prediction2 == 'MSA'%}
+         {% if lenn < 2 or blen >2%}
+        <h4 style="color:green;"></h4>
+        {% elif prediction2 == 'MSA'%}
         <h4 style="color:green;">XGboost classifier predict : MSA- انها لغه عربيه فصحي</h4>
         {% elif prediction2 == 'DIAL_GLF'%}
         <h4 style="color:green;">XGboost classifier predict :gulf-خليجي</h4>
