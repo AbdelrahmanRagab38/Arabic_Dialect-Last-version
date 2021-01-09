@@ -38,19 +38,44 @@ body {font-size:16px;}
     <!-- Detect Results -->
 
     <div class="results">
-      <h2>Detected Language:</h2>
-      
+      <h2>Detected Dialect for {{ messages }}:</h2>
+
       </div>
 
-        {% if prediction == 'MSA'%}
-        <h4 style="color:green;">MSA- انها لغه عربيه فصحي</h4>
+         {% if prediction3 == 'MSA'%}
+        <h4 style="color:green;">SVM CLassifier prediction is: MSA- انها لغه عربيه فصحي</h4>
+        {% elif prediction3 == 'DIAL_GLF'%}
+        <h4 style="color:green;">SVM CLassifier prediction is : gulf-خليجي</h4>
+        {% elif prediction3 == 'DIAL_EGY'%}
+        <h4 style="color:green;">SVM CLassifier prediction is : EGY-مصري اصيل</h4>
+         {% elif prediction3 == 'DIAL_LEV'%}
+        <h4 style="color:green;">SVM CLassifier prediction is : LEV-شاميه</h4>
+        {% endif %}
+
+         {% if prediction == 'MSA'%}
+        <h4 style="color:green;">NB calssifier prediction is : MSA- انها لغه عربيه فصحي</h4>
         {% elif prediction == 'DIAL_GLF'%}
-        <h4 style="color:black;">gulf-خليجي</h4>
-        {% elif prediction == 'DIAL_EGY'%}
-        <h4 style="color:black;">EGY-مصري اصيل</h4>
-        {% elif prediction == 'DIAL_LEV'%}
-        <h4 style="color:black;">LEV-شاميه</h4>
-        {% else: %}
+        <h4 style="color:green;">NB calssifier prediction is :gulf-خليجي</h4>
+       {% elif prediction == 'DIAL_LEV'%}
+        <h4 style="color:green;">NB calssifier prediction is :LEV-شاميه</h4>
+       {% elif prediction == 'DIAL_EGY'%}
+        <h4 style="color:green;">NB calssifier prediction is :EGY-مصري اصيل</h4>
+         {% endif %}
+
+
+
+        {% if prediction2 == 'MSA'%}
+        <h4 style="color:green;">XGboost classifier predict : MSA- انها لغه عربيه فصحي</h4>
+        {% elif prediction2 == 'DIAL_GLF'%}
+        <h4 style="color:green;">XGboost classifier predict :gulf-خليجي</h4>
+        {% elif prediction2 == 'DIAL_EGY'%}
+        <h4 style="color:green;">XGboost classifier predict :EGY-مصري اصيل</h4>
+        {% elif prediction2 == 'DIAL_LEV'%}
+        <h4 style="color:green;">XGboost classifier predict :LEV-شاميه</h4>
+
+
+
+         {% else: %}
         <h4 style="color:black;">Sorry I'm not sure - Try Again</h4>
 
         {% endif %}

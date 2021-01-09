@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
     <!-- Free CSS W3 School Template -->
 <html lang="en">
 <title>Lang Detector</title>
@@ -37,7 +36,7 @@ body {font-size:16px;}
     </div>
 
     <!-- Text Input -->
-  
+
   <div class="sub-container">
     <form action="{{ url_for('predict')}}" method="POST">
     <p>Enter Your Text Below and We'll Detect the dialect - اكتب هنا واحنا هنقولك اللهجة</p>    
@@ -46,6 +45,8 @@ body {font-size:16px;}
     <textarea name="message" rows="4" cols="50"></textarea>
     <br/>
     <input type="submit" value="predict">
+        <button onclick="window.location.reload();" type="button" ,>Get ispired by random one!</button>
+        <h5> Example: {{ get_ran }}</h5>
 	</form>
 	 
 </body>
